@@ -1,0 +1,39 @@
+    <div class="movie card" [ngClass]="isLiked ? 'borderGreen' : ''">
+        <div class="card-content row">
+            <div class="col s4">
+            <img [src]="poster">
+            <rating-component
+                *ngIf="isLiked"
+                [rating]="movieRating"
+                (ratingChange)="handleRatingChange($event)">
+            </rating-component>
+            </div>
+            <div class="col s8">
+                <div class="title">
+                {{title}}
+                <span>({{year}})</span>
+            </div>
+            <div class="details">
+                {{duration}} | {{genre}}
+            </div>
+            <hr>
+        <div class="plot">
+                {{plot}}
+            </div>
+            <button *ngIf="!isLiked" (click)="like()" class="btn" [style.backgroundColor]="isLiked ? 'green' : '#26a69a'">
+                {{isLiked ? 'Liked' : 'Like'}}
+            </button>
+            <div>
+                <p>Comments:</p>
+                <div *ngFor="let comment of allComments">
+                    {{comment}}
+                </div>
+                <div >
+                    <textarea [(ngModel)]="comment"></textarea>
+                    <p>{{countWords(comment)}} words</p>
+                    <button (click)="clear()" class="btn" [disabled]="comment.length <= 0"> Clear Comment</button>
+                    <button (click)="save()" class="btn" [disabled]="comment.length <= 0"> Save Comment</button>    
+                </div>
+            </div>
+        </div>
+    </div> 

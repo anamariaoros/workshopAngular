@@ -1,0 +1,36 @@
+.movie {
+    width: 700px;
+    min-height: 300px;
+  }
+  
+  img {
+    width:100%;
+  }
+  
+  .title {
+    font-size: 30px;
+  }
+  
+  .title span{
+    font-size: 14px;
+  }
+  
+  .details {
+    font-size: 12px;
+  }
+  
+  .plot {
+    margin-top: 20px;
+    font-size: 13px;
+  }
+
+  button {
+    background-color: blue;
+    margin: 20px 0;
+
+  }
+
+  .borderGreen {
+    border: 2px solid green;
+  }
+

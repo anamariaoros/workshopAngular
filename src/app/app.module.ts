@@ -4,13 +4,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { MoviesModule } from './movies/movies.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, 
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MoviesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
